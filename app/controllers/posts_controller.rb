@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
-
+    @post.user = Current.user
     if @post.save
       redirect_to @post, notice: "Post was successfully created."
     else
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1
   def update
+    # TODO: authorization
     if @post.update(post_params)
       redirect_to @post, notice: "Post was successfully updated."
     else
@@ -42,6 +43,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1
   def destroy
+    # TODO: authorization
     @post.destroy!
     redirect_to posts_path, status: :see_other, notice: "Post was successfully destroyed."
   end
@@ -55,6 +57,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content, :user_id)
+      params.require(:post).permit(:title, :content)
     end
 end
