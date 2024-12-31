@@ -6,9 +6,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <% if current_user %>
+        <% if authenticated? %>
           <li class="nav-item">
-          <%= link_to 'Profile', user_path(current_user.id), class: 'nav-link' %>
+          <%= link_to 'Profile', profile_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
             <%= button_to 'Logout', session_path(current_user.id), method: :delete, class: 'nav-link' %>
