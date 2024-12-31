@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  content: MyText
+  title: First Post
+  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis veniam voluptates ex at, laboriosam error natus dicta commodi sunt quibusdam recusandae nisi incidunt maiores corrupti deleniti magnam esse earum. Doloremque.
   user: one
 
 two:
-  title: MyString
-  content: MyText
+  title: Second Post
+  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ut laborum delectus accusamus quidem quos incidunt dolor laboriosam maxime cupiditate. Molestiae, similique blanditiis maiores qui obcaecati officiis voluptatem ut magni?
   user: two
