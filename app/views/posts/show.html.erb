@@ -1,6 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 w-100">
+      <%= render @post, usage: :show %>
+    </div>
+  </div>
+</div>
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |

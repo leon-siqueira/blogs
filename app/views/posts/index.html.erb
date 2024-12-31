@@ -4,13 +4,14 @@
 
 <h1>Posts</h1>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 w-100" id="posts">
+      <% @posts.each do |post| %>
+        <%= render post, usage: :index %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <%= link_to "New post", new_post_path %>

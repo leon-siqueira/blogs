@@ -1,17 +1,18 @@
 <div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
+  <div class="card mb-3">
+    <div class="card-header">
+      <% if usage == :index %>
+        <h5 class="card-title"><%= link_to post.title, post_path(post.id) %></h5>
+      <% else %>
+        <h5 class="card-title"><%= post.title %></h5>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= post.content %></p>
+    </div>
+    <div class="card-footer text-muted">
+      <small>Author: <%= post.user.username %></small>
+    </div>
+  </div>
 
 </div>
