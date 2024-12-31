@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :comments
   resources :posts
-  resources :users, except: %i[index]
+  resources :users, only: %i[create update destroy]
+  get "profile" => "users#profile", as: :profile
+  get "edit_profile" => "users#edit_profile", as: :edit_profile
   resource :session
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
