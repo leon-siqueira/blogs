@@ -6,6 +6,14 @@
       <%= render @post, usage: :show %>
     </div>
   </div>
+  <div class="row">
+    <div class="col-lg-8 w-100">
+      <h4>Comments</h4>
+      <% @post.comments.each do |comment| %>
+        <%= render "comments/comment", comment: %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <div>
