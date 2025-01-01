@@ -1,0 +1,24 @@
+one:
+  record: one (Post)
+  name: content
+  body: <p>In a <i>million</i> stars!</p>
+
+two:
+  record: two (Post)
+  name: content
+  body: <p>In a <b>billion</b> universes!</p>
+
+one_comment:
+  record: one (Comment)
+  name: content
+  body: <p><i>Great</i> Post!</p>
+
+two_comment:
+  record: two (Comment)
+  name: content
+  body: <p><i>Great</i> Post!</p>
+
+three_comment:
+  record: three (Comment)
+  name: content
+  body: <p><b>Terrible</b> Post! >:(</p>

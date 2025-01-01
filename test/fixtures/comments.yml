@@ -1,16 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: Great Post :)
   user: one
   post: one
 
 two:
-  content: Great Post :)
   user: two
   post: two
 
 three:
-  content: Terrible Post >:(
   user: one
   post: two
