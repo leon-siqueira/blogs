@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   allow_unauthenticated_access only: %i[ index show ]
+  before_action -> { authorize @post || Post.new }, only: %i[ edit update destroy ]
 
   # GET /posts
   def index
@@ -33,7 +34,6 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1
   def update
-    # TODO: authorization
     if @post.update(post_params)
       redirect_to @post, notice: "Post was successfully updated."
     else
@@ -43,7 +43,6 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1
   def destroy
-    # TODO: authorization
     @post.destroy!
     redirect_to posts_path, status: :see_other, notice: "Post was successfully destroyed."
   end

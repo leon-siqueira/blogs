@@ -138,9 +138,6 @@ GEM
     irb (1.14.3)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    jbuilder (2.13.0)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     json (2.9.1)
     kamal (2.4.0)
       activesupport (>= 7.0)
@@ -216,6 +213,8 @@ GEM
     public_suffix (6.0.1)
     puma (6.5.0)
       nio4r (~> 2.0)
+    pundit (2.4.0)
+      activesupport (>= 3.0.0)
     raabro (1.4.0)
     racc (1.8.1)
     rack (3.1.8)
@@ -386,10 +385,10 @@ DEPENDENCIES
   debug
   image_processing (~> 1.2)
   importmap-rails
-  jbuilder
   kamal
   propshaft
   puma (>= 5.0)
+  pundit
   rails (~> 8.0.1)
   rubocop-rails-omakase
   selenium-webdriver
