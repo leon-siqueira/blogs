@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc).page(params[:page] || 1).per(3)
   end
 
   # GET /posts/1
@@ -26,8 +26,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = Current.user
     if @post.save
-      redirect_to @post, notice: "Post was successfully created."
+      flash[:success] = "Post was successfully created."
+      redirect_to @post
     else
+      flash[:alert] =  "Could not create the post."
       render :new, status: :unprocessable_entity
     end
   end
@@ -35,16 +37,23 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: "Post was successfully updated."
+      flash[:success] = "Post was successfully updated."
+      redirect_to @post
     else
+      flash[:alert] =  "Could not update the post."
       render :edit, status: :unprocessable_entity
     end
   end
 
   # DELETE /posts/1
   def destroy
-    @post.destroy!
-    redirect_to posts_path, status: :see_other, notice: "Post was successfully destroyed."
+    if @post.destroy
+      flash[:success] = "Post was successfully destroyed."
+      redirect_to posts_path, status: :see_other
+    else
+      flash[:alert] =  "Could not delete the post."
+      redirect_to @post, status: :unprocessable_entity
+    end
   end
 
   private

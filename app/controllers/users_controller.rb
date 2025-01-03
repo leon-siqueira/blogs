@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user, notice: "User was successfully created."
+      flash[:success] = "User was successfully created."
+      redirect_to @user
     else
       render :new
     end
@@ -22,15 +23,22 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: "User was successfully updated."
+      flash[:success] = "User was successfully updated."
+      redirect_to @user
     else
+      flash[:alert] =  "Could not update the user."
       render :edit_profile
     end
   end
 
   def destroy
-    @user.destroy!
-    redirect_to users_url, notice: "User was successfully destroyed."
+    if @user.destroy
+      flash[:success] = "User was successfully destroyed."
+      redirect_to root_path
+    else
+      flash[:alert] =  "Could not delete the user."
+      redirect_to profile_path
+    end
   end
 
   private

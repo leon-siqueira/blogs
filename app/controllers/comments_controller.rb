@@ -24,8 +24,10 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      redirect_to @comment, notice: "Comment was successfully created."
+      flash[:success] = "Comment was successfully created."
+      redirect_to @comment
     else
+      flash[:alert] =  "Could not create the comment."
       render :new, status: :unprocessable_entity
     end
   end
@@ -33,8 +35,10 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1
   def update
     if @comment.update(comment_params)
-      redirect_to @comment, notice: "Comment was successfully updated."
+      flash[:success] = "Comment was successfully updated."
+      redirect_to @comment
     else
+      flash[:alert] =  "Could not update the comment."
       render :edit, status: :unprocessable_entity
     end
   end
@@ -42,7 +46,8 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   def destroy
     @comment.destroy!
-    redirect_to comments_path, status: :see_other, notice: "Comment was successfully destroyed."
+    flash[:success] = "Comment was successfully destroyed."
+    redirect_to comments_path, status: :see_other
   end
 
   private
