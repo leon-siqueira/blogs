@@ -1,4 +1,23 @@
 <div class="container">
+  <% if authenticated? && Current.user == @post.user %>
+    <div class="row mb-3">
+      <div class="col">
+        <%= link_to edit_post_path(@post), class: "text-decoration-none" do %>
+          <div class="btn btn-primary rounded d-flex align-items-center justify-content-center" style="width: 8rem; height: 2.2rem;">
+            Edit Post
+            <i class="bi bi-file-earmark-plus fs-5 ms-2"></i>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="col d-flex justify-content-end">
+        <%= button_to @post, method: :delete, class: "btn btn-danger rounded" do%>
+          <i class="bi bi-trash "></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
   <div class="row">
     <div class="col-lg-8 w-100">
       <%= render @post, usage: :show %>
@@ -12,11 +31,4 @@
       <% end %>
     </div>
   </div>
-</div>
-
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
