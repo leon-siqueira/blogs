@@ -1,18 +1,21 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Posts" %>
 
-<h1>Posts</h1>
-
 <div class="container">
+  <div class="row mb-3">
+    <%= link_to new_post_path, class: "text-decoration-none" do %>
+      <div class="btn btn-primary rounded d-flex align-items-center justify-content-center" style="width: 8rem; height: 2.2rem;">
+        New Post
+        <i class="bi bi-file-earmark-plus fs-5 ms-2"></i>
+      </div>
+    <% end %>
+  </div>
   <div class="row">
+
     <div class="col-lg-8 w-100" id="posts">
-      <%= paginate @posts %>
       <% @posts.each do |post| %>
         <%= render post, usage: :index %>
       <% end %>
+      <%= paginate @posts %>
     </div>
   </div>
 </div>
-
-<%= link_to "New post", new_post_path %>
