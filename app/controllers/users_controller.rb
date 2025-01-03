@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user_as_current, only: [ :profile, :edit_profile, :update, :destroy ]
+  allow_unauthenticated_access only: %i[ new create ]
 
   def profile
   end
@@ -14,7 +15,10 @@ class UsersController < ApplicationController
       flash[:success] = "User was successfully created."
       redirect_to @user
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("user_form", partial: "users/form", locals: { user: @user, usage: :register }) }
+      end
     end
   end
 

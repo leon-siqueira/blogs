@@ -1,19 +1,17 @@
-<%
-  form_options = {
-    register: {
-      url: users_path,
-      method: :post,
-      submit: 'Register'
-    },
-    edit: {
-      url: user_path(user),
-      method: :patch,
-      submit: 'Update'
-    }
-  }[usage]
-%>
+<% form_options = form_options(usage, user) %>
 
 <%= form_with(model: user, url: form_options[:url], method: form_options[:method], id: 'user_form', class: 'w-100') do |form| %>
+  <% if user.errors.any? %>
+    <div>
+      <% user.errors.each do |error| %>
+        <div class="alert alert-warning alert-dismissible fade show py-1 px-2 fs-7 mb-2" role="alert">
+          <%= error.full_message %>
+          <button type="button" class="btn-close m-2 p-0" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
   <%= form.label :username %>
   <%= form.text_field :username, class: 'form-control mb-3' %>
 
