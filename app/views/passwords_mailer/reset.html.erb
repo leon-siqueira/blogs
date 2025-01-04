@@ -1,4 +1,7 @@
-<p>
-  You can reset your password within the next 15 minutes on
-  <%= link_to "this password reset page", edit_password_url(@user.password_reset_token) %>.
-</p>
+<div>
+  <h1 style="font-family: Arial, sans-serif; font-size: 24px; color: #333;">Password Reset</h1>
+  <p style="font-family: Arial, sans-serif; font-size: 14px; color: #333;">
+    You can reset your password within the next 15 minutes on
+    <%= link_to "this password reset page", edit_password_url(@user.password_reset_token), style: "color: #1a73e8; text-decoration: none;" %>.
+  </p>
+</div>
