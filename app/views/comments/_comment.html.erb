@@ -1,7 +1,7 @@
 <div id="<%= dom_id comment %>">
   <div class="card mb-2">
     <div class="card-body py-2">
-      <p class="fw-bold card-title mb-0"><%= comment.user ? comment.user.username : "Anonymous" %></p>
+      <p class="card-title mb-0 <%= comment.user ? "fw-bold" : "text-muted" %>"><%= comment.user ? comment.user.username : "Anonymous" %></p>
       <p class="text-secondary fs-7"><%= comment.created_at.strftime('%d/%m/%Y') %></p>
       <%= comment.content %>
     </div>

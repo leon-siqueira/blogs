@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :posts
+  resources :posts do
+    resources :comments, only: %i[ create ]
+  end
   resources :users, only: %i[ new create update destroy]
   get "profile" => "users#profile", as: :profile
   get "edit_profile" => "users#edit_profile", as: :edit_profile

@@ -18,14 +18,15 @@
     </div>
   <% end %>
 
-  <div class="row">
+  <div class="row mb-5">
     <div class="col-lg-8 w-100">
       <%= render @post, usage: :show %>
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-8 w-100">
+    <div class="col-lg-8 w-100 mb-5">
       <h4>Comments</h4>
+      <%= render 'comments/form', comment: Comment.new(post_id: @post.id) %>
       <% @post.comments.each do |comment| %>
         <%= render "comments/comment", comment: %>
       <% end %>
