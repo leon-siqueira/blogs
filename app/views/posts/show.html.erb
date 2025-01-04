@@ -23,7 +23,7 @@
       <%= render @post, usage: :show %>
     </div>
   </div>
-  <div class="row">
+  <div class="row" id="comments" data-controller="comment">
     <div class="col-lg-8 w-100 mb-5">
       <h4>Comments</h4>
       <%= render 'comments/form', comment: Comment.new(post_id: @post.id) %>
