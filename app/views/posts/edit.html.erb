@@ -1,17 +1,14 @@
 <% content_for :title, "Editing post" %>
 
-<h1>Editing post</h1>
 <div class="content">
   <div class="row justify-content-center ps-3 w-100">
+    <div class="col-lg-8 mb-3">
+      <%= link_to post_path(@post), class: "btn btn-primary text-decoration-none"  do %>
+        <i class="bi bi-arrow-return-left"></i>
+      <% end %>
+    </div>
     <div class="col-lg-8">
       <%= render "form", post: @post %>
     </div>
   </div>
-</div>
-
-<br>
-
-<div>
-  <%= link_to "Show this post", @post %> |
-  <%= link_to "Back to posts", posts_path %>
 </div>
