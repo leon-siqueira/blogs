@@ -7,7 +7,7 @@ module UsersHelper
         submit: "Register"
       },
       edit: {
-        url: (edit_user_path(user) if user.persisted?),
+        url: (user_path(user) if user.persisted?),
         method: :patch,
         submit: "Update"
       }

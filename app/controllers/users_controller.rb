@@ -31,7 +31,10 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:alert] =  "Could not update the user."
-      render :edit_profile
+      respond_to do |format|
+        format.html { render :edit }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("user_form", partial: "users/form", locals: { user: @user, usage: :edit }) }
+      end
     end
   end
 
@@ -52,6 +55,10 @@ class UsersController < ApplicationController
     end
 
     def user_params
+      params.require(:user).reject { |_, v| v.blank? }
+      if params[:user][:password].present? && params[:user][:password_confirmation].nil?
+        params[:user][:password_confirmation] = ""
+      end
       params.require(:user).permit(:username, :email_address, :password, :password_confirmation)
     end
 end

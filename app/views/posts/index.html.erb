@@ -2,6 +2,7 @@
 
 <div class="container">
   <div class="row mb-3">
+    <%= paginate @posts, window: 1 %>
     <%= link_to new_post_path, class: "text-decoration-none" do %>
       <div class="btn btn-primary rounded d-flex align-items-center justify-content-center" style="width: 8rem; height: 2.2rem;">
         New Post
@@ -10,7 +11,6 @@
     <% end %>
   </div>
   <div class="row">
-
     <div class="col-lg-8 w-100" id="posts">
       <% @posts.each do |post| %>
         <%= render post, usage: :index %>
