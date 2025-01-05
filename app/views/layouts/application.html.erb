@@ -25,6 +25,7 @@
 
   <body>
     <%= render 'shared/navbar' %>
+    <%= ENV['HELLO'] %>
     <%= render 'shared/flash', flash: %>
     <%= yield %>
   </body>
