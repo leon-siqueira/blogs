@@ -1,0 +1,9 @@
+en:
+  flash_alerts:
+    application:
+      user_not_authorized: You are not authorized to perform this action.
+
+pt:
+  flash_alerts:
+    application:
+      user_not_authorized: Você não está autorizado a realizar esta ação.

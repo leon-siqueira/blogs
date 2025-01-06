@@ -1,0 +1,11 @@
+en:
+  flash_alerts:
+    sessions:
+      create:
+        error: Try another email address or password.
+
+pt:
+  flash_alerts:
+    sessions:
+      create:
+        error: Tente outro endereço de e-mail ou senha.

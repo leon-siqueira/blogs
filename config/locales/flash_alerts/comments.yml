@@ -1,0 +1,13 @@
+en:
+  flash_alerts:
+    comments:
+      create:
+        success: Comment was successfully created.
+        error: Could not create the comment.
+
+pt:
+  flash_alerts:
+    comments:
+      create:
+        success: Comentário foi criado com sucesso.
+        error: Não foi possível criar o comentário.

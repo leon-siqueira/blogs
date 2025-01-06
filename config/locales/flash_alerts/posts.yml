@@ -1,0 +1,25 @@
+en:
+  flash_alerts:
+    posts:
+      create:
+        success: Post was successfully created.
+        error: Could not create the post.
+      update:
+        success: Post was successfully updated.
+        error: Could not update the post.
+      destroy:
+        success: Post was successfully deleted.
+        error: Could not destroy the post.
+
+pt:
+  flash_alerts:
+    posts:
+      create:
+        success: Post foi criado com sucesso.
+        error: Não foi possível criar o post.
+      update:
+        success: Post foi atualizado com sucesso.
+        error: Não foi possível atualizar o post.
+      destroy:
+        success: Post foi deletado com sucesso.
+        error: Não foi possível deletar o post.

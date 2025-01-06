@@ -1,0 +1,25 @@
+en:
+  flash_alerts:
+    users:
+      create:
+        success: User was successfully created.
+        error: Could not create the user.
+      update:
+        success: User was successfully updated.
+        error: Could not update the user.
+      destroy:
+        success: User was successfully deleted.
+        error: Could not destroy the user.
+
+pt:
+  flash_alerts:
+    users:
+      create:
+        success: Usuário foi criado com sucesso.
+        error: Não foi possível criar o usuário.
+      update:
+        success: Usuário foi atualizado com sucesso.
+        error: Não foi possível atualizar o usuário.
+      destroy:
+        success: Usuário foi deletado com sucesso.
+        error: Não foi possível deletar o usuário.
