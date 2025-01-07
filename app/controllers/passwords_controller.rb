@@ -10,7 +10,7 @@ class PasswordsController < ApplicationController
       PasswordsMailer.reset(user).deliver_now
     end
 
-    flash[:success] = "Password reset instructions sent (if user with that email address exists)."
+    flash[:success] = I18n.t("flash_alerts.passwords.create.success")
     redirect_to new_session_path
   end
 
