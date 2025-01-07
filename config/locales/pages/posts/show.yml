@@ -1,3 +1,13 @@
 en:
+  pages:
+    posts:
+      show:
+        edit_post: Edit Post
+        comments: Comments
 
 pt:
+  pages:
+    posts:
+      show:
+        edit_post: Editar Post
+        comments: Comentários

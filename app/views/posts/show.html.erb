@@ -3,8 +3,8 @@
     <div class="row mb-3">
       <div class="col">
         <%= link_to edit_post_path(id: @post.id), class: "text-decoration-none" do %>
-          <div class="btn btn-primary rounded d-flex align-items-center justify-content-center" style="width: 8rem; height: 2.2rem;">
-            Edit Post
+          <div class="btn btn-primary rounded d-flex align-items-center justify-content-center" style="width: 9rem; height: 2.2rem;">
+            <%= t('pages.posts.show.edit_post') %>
             <i class="bi bi-pencil-square ms-2"></i>
           </div>
         <% end %>
@@ -25,7 +25,7 @@
   </div>
   <div class="row" id="comments" data-controller="comment">
     <div class="col-lg-8 w-100 mb-5">
-      <h4>Comments</h4>
+      <h4><%= t('pages.posts.show.comments') %></h4>
       <%= render 'comments/form', comment: Comment.new(post_id: @post.id) %>
       <% @post.comments.each do |comment| %>
         <%= render "comments/comment", comment: %>
