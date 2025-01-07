@@ -2,7 +2,7 @@
   <% if authenticated? && Current.user == @post.user %>
     <div class="row mb-3">
       <div class="col">
-        <%= link_to edit_post_path(@post), class: "text-decoration-none" do %>
+        <%= link_to edit_post_path(id: @post.id), class: "text-decoration-none" do %>
           <div class="btn btn-primary rounded d-flex align-items-center justify-content-center" style="width: 8rem; height: 2.2rem;">
             Edit Post
             <i class="bi bi-pencil-square ms-2"></i>
@@ -11,7 +11,7 @@
       </div>
 
       <div class="col d-flex justify-content-end">
-        <%= button_to @post, method: :delete, class: "btn btn-danger rounded" do%>
+        <%= button_to post_path(id: @post), method: :delete, class: "btn btn-danger rounded" do%>
           <i class="bi bi-trash "></i>
         <% end %>
       </div>

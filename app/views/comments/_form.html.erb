@@ -1,4 +1,4 @@
-<%= form_with(model: comment, class: "mb-5", url: post_comments_path(comment.post)) do |form| %>
+<%= form_with(model: comment, class: "mb-5", url: post_comments_path(post_id: comment.post_id)) do |form| %>
   <%= form.hidden_field :post_id, value: comment.post_id %>
 
   <div class="mb-3">
@@ -6,6 +6,6 @@
   </div>
 
   <div class="d-flex justify-content-end">
-    <%= form.submit "Comment", class: 'btn btn-primary px-4' %>
+    <%= form.submit t('pages.comments.form.submit'), class: 'btn btn-primary px-4' %>
   </div>
 <% end %>

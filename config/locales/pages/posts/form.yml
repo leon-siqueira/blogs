@@ -1,0 +1,15 @@
+en:
+  pages:
+    posts:
+      form:
+        submit:
+          create: Post
+          update: Update
+
+pt:
+  pages:
+    posts:
+      form:
+        submit:
+          create: Postar
+          update: Atualizar

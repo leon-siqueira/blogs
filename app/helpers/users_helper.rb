@@ -4,12 +4,12 @@ module UsersHelper
       register: {
         url: users_path,
         method: :post,
-        submit: "Register"
+        submit: I18n.t("pages.users.form.submit.register")
       },
       edit: {
-        url: (user_path(user) if user.persisted?),
+        url: (user_path(id: user) if user.persisted?),
         method: :patch,
-        submit: "Update"
+        submit: I18n.t("pages.users.form.submit.update")
       }
     }[usage]
   end

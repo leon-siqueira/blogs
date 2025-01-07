@@ -1,0 +1,11 @@
+en:
+  pages:
+    posts:
+      index:
+        new_post: New Post
+
+pt:
+  pages:
+    posts:
+      index:
+        new_post: Novo Post

@@ -1,0 +1,15 @@
+en:
+  pages:
+    users:
+      form:
+        submit:
+          register: Register
+          update: Update
+
+pt:
+  pages:
+    users:
+      form:
+        submit:
+          register: Registrar
+          update: Atualizar

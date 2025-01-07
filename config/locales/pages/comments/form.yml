@@ -1,0 +1,11 @@
+en:
+  pages:
+    comments:
+      form:
+        submit: Comment
+
+pt:
+  pages:
+    comments:
+      form:
+        submit: Comentar

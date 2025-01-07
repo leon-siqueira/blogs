@@ -5,16 +5,16 @@
   <div class="row justify-content-center p-3">
     <div class="p-3 border rounded col-md-6">
       <%= form_with url: session_path do |form| %>
-        <%= form.label :email_address, "Email" %>
-        <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "form-control mb-3" %>
-        <%= form.label :password, "Password" %>
-        <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "form-control mb-3" %>
-        <%= form.submit "Sign in", class: "btn btn-primary" %>
+        <%= form.label :email_address, t('pages.sessions.new.labels.email') %>
+        <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: t('pages.sessions.new.placeholders.email'), value: params[:email_address], class: "form-control mb-3" %>
+        <%= form.label :password, t('pages.sessions.new.labels.password') %>
+        <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: t('pages.sessions.new.placeholders.password'), maxlength: 72, class: "form-control mb-3" %>
+        <%= form.submit t('pages.sessions.new.submit'), class: "btn btn-primary" %>
       <% end %>
       <br>
 
-      <%= link_to "Register", new_user_path %><br>
-      <%= link_to "Forgot password?", new_password_path %>
+      <%= link_to t('pages.sessions.new.register'), new_user_path %><br>
+      <%= link_to t('pages.sessions.new.forgot_password'), new_password_path %>
     </div>
   </div>
 </div>

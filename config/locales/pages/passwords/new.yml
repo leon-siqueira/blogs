@@ -1,0 +1,17 @@
+en:
+  pages:
+    passwords:
+      new:
+        card_header: Password Reset
+        card_text: Enter your email address and we'll send you an email with instructions to reset your password.
+        placeholder: Enter your email address
+        submit: Send password reset email
+
+pt:
+  pages:
+    passwords:
+      new:
+        card_header: Redefinir senha
+        card_text: Insira seu endereço de email e enviaremos um email com instruções para redefinir sua senha.
+        placeholder: Insira seu endereço de email
+        submit: Enviar email de redefinição de senha

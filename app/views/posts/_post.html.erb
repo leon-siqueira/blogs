@@ -2,7 +2,7 @@
   <div class="card mb-3">
     <div class="card-header">
       <% if usage == :index %>
-        <h5 class="card-title my-1"><%= link_to post.title, post_path(post.id) %></h5>
+        <h5 class="card-title my-1"><%= link_to post.title, post_path(id: post.id) %></h5>
       <% else %>
         <h5 class="card-title my-1"><%= post.title %></h5>
       <% end %>
@@ -11,7 +11,7 @@
       <%= post.content %>
     </div>
     <div class="card-footer text-muted">
-      <small>Author: <%= post.user.username %></small>
+      <small><%= "#{t('pages.posts.post.author')}: #{post.user.username}" %></small>
     </div>
   </div>
 

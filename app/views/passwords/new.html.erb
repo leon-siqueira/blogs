@@ -1,14 +1,14 @@
 <div class="d-flex justify-content-center p-3">
   <div class="card text-center" style="max-width: 36rem;">
-    <div class="card-header h5 text-white bg-primary">Password Reset</div>
+    <div class="card-header h5 text-white bg-primary"><%= t('pages.passwords.new.card_header') %></div>
       <div class="card-body px-5">
           <p class="card-text py-2">
-              Enter your email address and we'll send you an email with instructions to reset your password.
+              <%= t('pages.passwords.new.card_text') %>
           </p>
 
         <%= form_with url: passwords_path do |form| %>
-          <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "form-control" %><br>
-          <%= form.submit "Email reset instructions", class: "btn btn-primary" %>
+          <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: t('pages.passwords.new.placeholder'), value: params[:email_address], class: "form-control" %><br>
+          <%= form.submit t('pages.passwords.new.submit'), class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>

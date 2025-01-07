@@ -1,0 +1,27 @@
+en:
+  pages:
+    sessions:
+      new:
+        labels:
+          email: Email address
+          password: Password
+        placeholders:
+          email: Enter your email address
+          password: Enter your password
+        submit: Sign in
+        register: Register
+        forgot_password: Forgot your password?
+
+pt:
+  pages:
+    sessions:
+      new:
+        labels:
+          email: Endereço de email
+          password: Senha
+        placeholders:
+          email: Insira seu endereço de email
+          password: Insira sua senha
+        submit: Entrar
+        register: Registrar
+        forgot_password: Esqueceu sua senha?

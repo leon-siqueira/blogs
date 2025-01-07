@@ -3,12 +3,12 @@
 <div class="content">
   <div class="row justify-content-center ps-3 w-100">
     <div class="col-lg-8 mb-3">
-      <%= link_to post_path(@post), class: "btn btn-primary text-decoration-none"  do %>
+      <%= link_to post_path(id: @post.id), class: "btn btn-primary text-decoration-none"  do %>
         <i class="bi bi-arrow-return-left"></i>
       <% end %>
     </div>
     <div class="col-lg-8">
-      <%= render "form", post: @post %>
+      <%= render "form", post: @post, usage: :edit %>
     </div>
   </div>
 </div>

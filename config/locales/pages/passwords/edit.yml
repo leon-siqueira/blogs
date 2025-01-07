@@ -1,0 +1,25 @@
+en:
+  pages:
+    passwords:
+      edit:
+        card_header: Update your password
+        submit: Save
+        labels:
+          password: Password
+          password_confirmation: Password confirmation
+        placeholders:
+          password: Enter your new password
+          password_confirmation: Confirm your new password
+
+pt:
+  pages:
+    passwords:
+      edit:
+        card_header: Atualize sua senha
+        submit: Salvar
+        labels:
+          password: Senha
+          password_confirmation: Confirmação de senha
+        placeholders:
+          password: Insira sua nova senha
+          password_confirmation: Confirme sua nova senha

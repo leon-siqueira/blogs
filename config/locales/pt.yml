@@ -1,0 +1,50 @@
+pt:
+  activerecord:
+    attributes:
+      user:
+        username: "Nome de usuário"
+        email_address: "Endereço de e-mail"
+        password: "Senha"
+        password_confirmation: "Confirmação de senha"
+      session:
+        email_address: "Endereço de e-mail"
+        password: "Senha"
+      comment:
+        content: Conteúdo
+      post:
+        title: Título
+        content: Conteúdo
+      
+  errors:
+    messages:
+      model_invalid: "Falha na validação: %{errors}"
+      inclusion: "não está incluído na lista"
+      exclusion: "está reservado"
+      invalid: "é inválido"
+      confirmation: "não corresponde a %{attribute}"
+      accepted: "deve ser aceito"
+      empty: "não pode estar vazio"
+      blank: "não pode estar em branco"
+      present: "deve estar em branco"
+      too_long:
+        one: "é muito longo (o máximo é 1 caractere)"
+        other: "é muito longo (o máximo é %{count} caracteres)"
+      password_too_long: "é muito longa"
+      too_short:
+        one: "é muito curto (o mínimo é 1 caractere)"
+        other: "é muito curto (o mínimo é %{count} caracteres)"
+      wrong_length:
+        one: "tem o tamanho errado (deve ser 1 caractere)"
+        other: "tem o tamanho errado (deve ser %{count} caracteres)"
+      not_a_number: "não é um número"
+      not_an_integer: "deve ser um inteiro"
+      greater_than: "deve ser maior que %{count}"
+      greater_than_or_equal_to: "deve ser maior ou igual a %{count}"
+      equal_to: "deve ser igual a %{count}"
+      less_than: "deve ser menor que %{count}"
+      less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+      other_than: "deve ser diferente de %{count}"
+      in: "deve estar em %{count}"
+      odd: "deve ser ímpar"
+      even: "deve ser par"
+      taken: "já está em uso"

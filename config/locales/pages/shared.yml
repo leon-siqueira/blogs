@@ -1,0 +1,13 @@
+en:
+  navbar:
+    home: Home
+    sign_in: Sign In
+    profile: Profile
+    sign_out: Sign Out
+
+pt:
+  navbar:
+    home: Início
+    sign_in: Entrar
+    profile: Perfil
+    sign_out: Sair

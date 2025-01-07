@@ -3,14 +3,14 @@
     <div class="col">
       <%= link_to edit_profile_path, class: "text-decoration-none" do %>
         <div class="btn btn-primary rounded d-flex align-items-center justify-content-center" style="width: 10rem; height: 2.2rem;">
-          Edit Profile
+          <%= t('pages.users.profile.edit_profile')%>
           <i class="bi bi-pencil-square ms-2"></i>
         </div>
       <% end %>
     </div>
 
     <div class="col d-flex justify-content-end">
-      <%= button_to @post, method: :delete, class: "btn btn-danger rounded" do%>
+      <%= button_to user_path(id: Current.user.id), method: :delete, class: "btn btn-danger rounded" do%>
         <i class="bi bi-trash "></i>
       <% end %>
     </div>
@@ -21,12 +21,12 @@
       <%= render 'user', user: @user %>
     </div>
     <div class="col-lg-4 w-100">
-      <h3>My Posts</h3>
+      <h3><%= t('pages.users.profile.my_posts')%></h3>
       <ul class="list-group">
         <% @user.posts.each do |post| %>
           <li class="list-group-item">
             <div class="d-flex justify-content-between">
-              <%= link_to "#{post.title}", post_path(post) %>
+              <%= link_to "#{post.title}", post_path(id: post.id) %>
               <small class="text-muted"><%= post.created_at.strftime("%d/%m/%Y") %></small>
             </div>
           </li>

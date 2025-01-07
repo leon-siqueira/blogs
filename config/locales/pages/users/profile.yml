@@ -1,0 +1,13 @@
+en:
+  pages:
+    users:
+      profile:
+        edit_profile: Edit Profile
+        my_posts: My Posts
+
+pt:
+  pages:
+    users:
+      profile:
+        edit_profile: Editar Perfil
+        my_posts: Meus Posts
