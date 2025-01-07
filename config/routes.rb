@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount MissionControl::Jobs::Engine, at: "/jobs"
 
-  scope "/:locale" do
+  scope "(:locale)", locale: /en|pt/ do
     resources :posts do
       resources :comments, only: %i[ create ]
     end

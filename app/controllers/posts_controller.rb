@@ -26,10 +26,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = Current.user
     if @post.save
-      flash[:success] = "Post was successfully created."
-      redirect_to @post
+      flash[:success] = I18n.t("flash_alerts.posts.create.success")
+      redirect_to post_path(id: @post.id)
     else
-      flash[:alert] =  "Could not create the post."
+      flash[:alert] = I18n.t("flash_alerts.posts.create.error")
       render :new, status: :unprocessable_entity
     end
   end
@@ -37,10 +37,10 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
-      flash[:success] = "Post was successfully updated."
-      redirect_to @post
+      flash[:success] = I18n.t("flash_alerts.posts.update.success")
+      redirect_to post_path(id: @post.id)
     else
-      flash[:alert] =  "Could not update the post."
+      flash[:alert] = I18n.t("flash_alerts.posts.update.error")
       render :edit, status: :unprocessable_entity
     end
   end
@@ -48,11 +48,11 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     if @post.destroy
-      flash[:success] = "Post was successfully destroyed."
+      flash[:success] = I18n.t("flash_alerts.posts.destroy.success")
       redirect_to posts_path, status: :see_other
     else
-      flash[:alert] =  "Could not delete the post."
-      redirect_to @post, status: :unprocessable_entity
+      flash[:alert] = I18n.t("flash_alerts.posts.destroy.error")
+      redirect_to post_path(id: @post.id), status: :unprocessable_entity
     end
   end
 

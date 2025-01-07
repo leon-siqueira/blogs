@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   allow_unauthenticated_access only: %i[ create ]
 
 
@@ -9,10 +8,10 @@ class CommentsController < ApplicationController
     @comment.user = Current.user if authenticated?
 
     if @comment.save
-      flash[:success] = "Comment was successfully created."
-      redirect_to post_path(@comment.post)
+      flash[:success] = I18n.t("flash_alerts.comments.create.success")
+      redirect_to post_path(id: @comment.post_id)
     else
-      flash[:alert] =  "Could not create the comment."
+      flash[:alert] =  I18n.t("flash_alerts.comments.create.error")
       @post = @comment.post
       render "posts/show", status: :unprocessable_entity
     end

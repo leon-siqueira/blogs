@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       start_new_session_for user
       redirect_to after_authentication_url
     else
-      flash[:alert] = "Try another email address or password."
+      flash[:alert] = I18n.t("flash_alerts.sessions.create.error")
       redirect_to new_session_path
     end
   end

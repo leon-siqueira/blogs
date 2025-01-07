@@ -12,9 +12,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "User was successfully created."
+      flash[:success] = I18n.t("flash_alerts.users.create.success")
       redirect_to new_session_path
     else
+      flash[:alert] = I18n.t("flash_alerts.users.create.error")
       respond_to do |format|
         format.html { render :new }
         format.turbo_stream { render turbo_stream: turbo_stream.replace("user_form", partial: "users/form", locals: { user: @user, usage: :register }) }
@@ -27,10 +28,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:success] = "User was successfully updated."
-      redirect_to @user
+      flash[:success] = I18n.t("flash_alerts.users.update.success")
+      redirect_to @user, id: @user.id
     else
-      flash[:alert] =  "Could not update the user."
+      flash[:alert] = I18n.t("flash_alerts.users.update.error")
       respond_to do |format|
         format.html { render :edit }
         format.turbo_stream { render turbo_stream: turbo_stream.replace("user_form", partial: "users/form", locals: { user: @user, usage: :edit }) }
@@ -40,10 +41,10 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      flash[:success] = "User was successfully destroyed."
+      flash[:success] = I18n.t("flash_alerts.users.destroy.success")
       redirect_to root_path
     else
-      flash[:alert] =  "Could not delete the user."
+      flash[:alert] = I18n.t("flash_alerts.users.destroy.error")
       redirect_to profile_path
     end
   end
