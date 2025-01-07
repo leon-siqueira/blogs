@@ -1,24 +1,13 @@
-# README
+# Blogs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version
 
-Things you may want to cover:
+- Ruby 3.3.6
 
-* Ruby version
+## Rails version
 
-* System dependencies
+- Rails 8.0.1
 
-* Configuration
+## Link to the site
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [Visit the site](https://blogs-op9r.onrender.com/)
